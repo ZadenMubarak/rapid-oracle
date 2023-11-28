@@ -33,8 +33,15 @@ const ViewFullInfo = () => {
             <div class="border-round w-12rem h-6rem bg-primary font-bold flex align-items-center justify-content-center">2</div>
         </div>
 
-        <div className="card w-20rem">
-            <Card title="Title">
+        <div className="flex justify-content flex-wrap gap-2">
+            <Card title="Title " className='w-20rem'>
+                <p className="m-0">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae 
+                    numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
+                </p>
+            </Card>
+
+            <Card title="Title " className='w-50%'>
                 <p className="m-0">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae 
                     numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!

@@ -6,17 +6,17 @@ import { Button } from 'primereact/button';
 import { Sidebar } from 'primereact/sidebar';
 import { Divider } from 'primereact/divider';
 
-import { AppStateService } from '../Appstate-sevice/AppState.service';
+// import { AppStateService } from '../Appstate-sevice/AppState.service';
 
 const Navbar = () => {
     const [visible, setVisible] = useState(false);
-    const [buttonLabel, setButtonLabel] = useState('Connect your wallet');
-    const service = new AppStateService();
+    // const [buttonLabel, setButtonLabel] = useState('Connect your wallet');
+    // const service = new AppStateService();
     const navigate = useNavigate();
 
-    if (service.connected === false){
-        setButtonLabel(service.walletAddress)
-    }
+    // if (service.connected === false){
+    //     setButtonLabel(service.walletAddress)
+    // }
 
     const startContent = (
         <React.Fragment>
@@ -41,7 +41,7 @@ const Navbar = () => {
 
     const endContent = (
         <React.Fragment>
-            <Button label='Connect your wallet' icon="pi pi-id-card" className="p-button-success mr-2" />
+            <Button label='Connect your wallet' icon="pi pi-id-card" className="p-button-warning mr-2" />
         </React.Fragment>
     );
 
