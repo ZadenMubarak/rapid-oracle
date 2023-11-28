@@ -1,9 +1,14 @@
 import React from 'react'
+import { Toolbar } from 'primereact/toolbar';
 
-function Navbar_component() {
+const Navbar = () => {
   return (
-    <div>Navbar_component</div>
+    <div>
+
+        <Toolbar/>
+
+    </div>
   )
 }
 
-export default Navbar_component
+export default Navbar
