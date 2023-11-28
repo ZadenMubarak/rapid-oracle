@@ -1,4 +1,5 @@
 import { MetaMaskSDK } from '@metamask/sdk';
+import { ethers } from 'ethers';
 
 export class AppStateService {
 
@@ -12,7 +13,7 @@ export class AppStateService {
         console.log("instance created");
         const MMSDK = new MetaMaskSDK();
         this.ethereum = MMSDK.getProvider();
-        this.provider = new ethers.BrowserProvider(this.ethereum);
+        // this.provider = new ethers.getDefaultProvider(this.ethereum);
         this.walletAddress = "";
         this.connected = false;
     }
@@ -31,6 +32,7 @@ export class AppStateService {
   
           const event = new Event("loggedIn");
           window.dispatchEvent(event);
+          
           return true;
           
         } catch (error) {
