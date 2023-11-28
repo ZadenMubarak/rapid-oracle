@@ -20,10 +20,9 @@ const Navbar = () => {
 
     const startContent = (
         <React.Fragment>
-            <Button icon="pi pi-bars p-toolbar-separator mr-2" className="p-button mr-2" onClick={() => setVisible(true)} />
-            <div className="mb-3 font-bold text-1xl">
-                <span className="text-blue-600">Rapid.Oracle</span>
-            </div>
+            <Button icon="pi pi-bars p-toolbar-separator mr-2" className="p-button mr-2" onClick={() => setVisible(true)} severity="secondary" text/>
+            <Button label="Rapid.Oracle" text disabled severity='info' />
+
             <Sidebar title='Side Bar' visible={visible} onHide={() => setVisible(false)} >
                 <Divider />
                 <Button label='Home' size='large' text raised style={{width:"100%"}} icon='pi pi-home'onClick={() => {navigate('/'); setVisible(false)}}/>
@@ -32,7 +31,7 @@ const Navbar = () => {
                 <div style={{height:'5px'}}></div>
                 <Button label='Tutorials' size='large' text raised style={{width:"100%"}}/>
                 <div style={{height:'5px'}}></div>
-                <Button label='List function' size='large' text raised style={{width:"100%"}}/>
+                <Button label='List function' size='large' text raised style={{width:"100%"}} onClick={() => {navigate('/list-function'); setVisible(false)}}/>
                 <div style={{height:'5px'}}></div> 
                 <Button label='View functions' size='large' text raised style={{width:"100%"}} onClick={() => {navigate('/view-functions-cards'); setVisible(false)}}/>
             </Sidebar>

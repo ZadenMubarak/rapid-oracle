@@ -5,6 +5,7 @@ export let market_card = [
         author: "Author",
         long_details: "This will be the long details of the function",
         short_details: "shrt details",
+        usage: "this would be the usage of the specific function"
 
     },
 
@@ -14,6 +15,7 @@ export let market_card = [
         author: "Author",
         long_details: "This will be the long details of the function",
         short_details: "shrt details",
+        usage: "this would be the usage of the specific function"
 
     },
 
@@ -23,6 +25,7 @@ export let market_card = [
         author: "Author",
         long_details: "This will be the long details of the function",
         short_details: "shrt details",
+        usage: "this would be the usage of the specific function"
 
     },
 
@@ -32,6 +35,7 @@ export let market_card = [
         author: "Author",
         long_details: "This will be the long details of the function",
         short_details: "shrt details",
+        usage: "this would be the usage of the specific function"
 
     },
 
@@ -44,6 +48,7 @@ export let market_card = [
         author: "Author",
         long_details: "This will be the long details of the function",
         short_details: "shrt details",
+        usage: "this would be the usage of the specific function"
 
     },
 
@@ -53,6 +58,7 @@ export let market_card = [
         author: "Author",
         long_details: "This will be the long details of the function",
         short_details: "shrt details",
+        usage: "this would be the usage of the specific function"
 
     },
 
@@ -62,6 +68,7 @@ export let market_card = [
         author: "Author",
         long_details: "This will be the long details of the function",
         short_details: "shrt details",
+        usage: "this would be the usage of the specific function"
 
     },
 
@@ -71,6 +78,7 @@ export let market_card = [
         author: "Author",
         long_details: "This will be the long details of the function",
         short_details: "shrt details",
+        usage: "this would be the usage of the specific function"
 
     },
     ///////////////////////////////////////////////
@@ -81,6 +89,7 @@ export let market_card = [
         author: "Author",
         long_details: "This will be the long details of the function",
         short_details: "shrt details",
+        usage: "this would be the usage of the specific function"
 
     },
 
@@ -90,6 +99,7 @@ export let market_card = [
         author: "Author",
         long_details: "This will be the long details of the function",
         short_details: "shrt details",
+        usage: "this would be the usage of the specific function"
 
     },
 
@@ -99,6 +109,7 @@ export let market_card = [
         author: "Author",
         long_details: "This will be the long details of the function",
         short_details: "shrt details",
+        usage: "this would be the usage of the specific function"
 
     },
 
@@ -108,6 +119,7 @@ export let market_card = [
         author: "Author",
         long_details: "This will be the long details of the function",
         short_details: "shrt details",
+        usage: "this would be the usage of the specific function"
 
     },
     ///////////////////////////////////////////////

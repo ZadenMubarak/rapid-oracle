@@ -23,7 +23,7 @@ const ViewCards = () => {
                     <Chip label="Mystery" />
                 </div>
             </div>
-
+            <div style={{height:"30px"}}></div>
             <div className="text-3xl font-medium text-900 mb-3">Available functions</div>
 
             <div className="flex flex-column">
@@ -53,6 +53,7 @@ const ViewCards = () => {
                             <div>{card.short_details}</div>
                             <Divider />
                             <Button
+                                style={{width:"100%"}}
                                 label='open'
                                 severity='primary'
                                 size='medium'

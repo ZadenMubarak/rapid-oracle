@@ -22,7 +22,7 @@ const HomePage = () => {
                 </section>
             </div>
             <div className="col-12 md:col-6 overflow-hidden">
-                <img src="https://public.bnbstatic.com/static/academy/uploads-original/36916c121ba1402fbc496bf825c3052b.png" alt="hero-1" className="md:ml-auto block md:h-full" style={{ clipPath: 'polygon(8% 0, 100% 0%, 100% 100%, 0 100%)' }} />
+                <img src="https://appdevelopermagazine.com/scripts/resize/?path=/multimedia/Using-smart-contracts-to-improve-data-management_tbo7l3y0.jpg&width=600" alt="hero-1" className="md:ml-auto block md:h-full" style={{ clipPath: 'polygon(8% 0, 100% 0%, 100% 100%, 0 100%)' }} />
             </div>
         </div>
     
