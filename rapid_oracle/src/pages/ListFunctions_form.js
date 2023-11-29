@@ -24,6 +24,10 @@ const ListFunctions = () => {
         setTitle(event.target.value)
     }
 
+    const hndleNameChange = (event) => {
+        setName(event.target.value)
+    }
+
     const renderHeader = () => {
         return (
             <span className="ql-formats">
