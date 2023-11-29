@@ -28,6 +28,14 @@ const ListFunctions = () => {
         setName(event.target.value)
     }
 
+    const hndleAuthorChange = (event) => {
+        setAuthor(event.target.value)
+    }
+
+    const hndleImageChange = (event) => {
+        setImage(event.target.value)
+    }
+
     const renderHeader = () => {
         return (
             <span className="ql-formats">
