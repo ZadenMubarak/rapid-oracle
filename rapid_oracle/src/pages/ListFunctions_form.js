@@ -20,6 +20,10 @@ const ListFunctions = () => {
 
     const toast = useRef(null);
 
+    const hndleTitleChange = (event) => {
+        setTitle(event.target.value)
+    }
+
     const renderHeader = () => {
         return (
             <span className="ql-formats">
