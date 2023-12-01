@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from 'primereact/button';
 
-// import { market_card } from '../models/market_card_model';
-
+import Lottie from 'lottie-react';
+import animationData from '../components/Animation - 1701427585713.json';
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -24,7 +24,8 @@ const HomePage = () => {
                 </section>
             </div>
             <div className="col-12 md:col-6 overflow-hidden">
-                <img src="https://appdevelopermagazine.com/scripts/resize/?path=/multimedia/Using-smart-contracts-to-improve-data-management_tbo7l3y0.jpg&width=600" alt="hero-1" className="md:ml-auto block md:h-full" style={{ clipPath: 'polygon(8% 0, 100% 0%, 100% 100%, 0 100%)' }} />
+                {/* <img src="https://appdevelopermagazine.com/scripts/resize/?path=/multimedia/Using-smart-contracts-to-improve-data-management_tbo7l3y0.jpg&width=600" alt="hero-1" className="md:ml-auto block md:h-full" style={{ clipPath: 'polygon(8% 0, 100% 0%, 100% 100%, 0 100%)' }} /> */}
+                <Lottie animationData={animationData} style={{ clipPath: 'polygon(8% 0, 100% 0%, 100% 100%, 0 100%)' }}/>
             </div>
         </div>
     

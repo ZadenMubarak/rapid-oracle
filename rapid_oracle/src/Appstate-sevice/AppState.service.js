@@ -21,16 +21,16 @@ export class AppStateService {
 
     async connectToMetaMask() {
         if (window.ethereum) {
-          try {
-           
-            await window.ethereum.request({ method: 'eth_requestAccounts', params:[] });
-            // this.walletAddress = this.accounts[0];
-            
-          } catch (error) {
-            console.error(error);
-          }
+            try {
+                // Request account access
+                await window.ethereum.request({ method: 'eth_requestAccounts', params:[] });
+            } catch (error) {
+                console.error('User denied account access');
+                return null;
+            }
         } else {
-          console.log('MetaMask extension not detected');
+            console.error('MetaMask not detected');
+            return null;
         }
       } 
 }
