@@ -1,5 +1,6 @@
-import { MetaMaskSDK } from '@metamask/sdk';
+// import { MetaMaskSDK } from '@metamask/sdk';
 import { ethers } from 'ethers';
+import {MetaMaskSDK} from '@metamask/sdk'
 
 export class AppStateService {
 
@@ -12,36 +13,24 @@ export class AppStateService {
 
         console.log("instance created");
         const MMSDK = new MetaMaskSDK();
-        this.ethereum = MMSDK.getProvider();
-        // this.provider = new ethers.getDefaultProvider(this.ethereum);
+        this.ethereum = window.ethereum.getSDKProviderState;
+        this.provider = new ethers.getDefaultProvider(this.ethereum);
         this.walletAddress = "";
         this.connected = false;
     }
 
     async connectToMetaMask() {
-        try {
-          if(!this.ethereum){
-            alert("Please install Metamask and configure Hedera Testnet")
-            throw Error("Metamask not installed");
+        if (window.ethereum) {
+          try {
+           
+            await window.ethereum.request({ method: 'eth_requestAccounts', params:[] });
+            // this.walletAddress = this.accounts[0];
+            
+          } catch (error) {
+            console.error(error);
+          }
+        } else {
+          console.log('MetaMask extension not detected');
         }
-  
-          const accounts = await this.ethereum.request({ method: 'eth_requestAccounts' });
-          alert(`Connected to: ${accounts[0]}`);
-          this.walletAddress = accounts[0];
-          this.walletConnected = true;
-  
-          const event = new Event("loggedIn");
-          window.dispatchEvent(event);
-          
-          return true;
-          
-        } catch (error) {
-          alert("Could not connect to wallet.");
-          console.log(error);
-          return false;
-        }
-  
-  
-  
-      }
+      } 
 }

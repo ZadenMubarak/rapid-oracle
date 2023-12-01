@@ -11,7 +11,9 @@ import HomePage from './pages/Home_page'
 import ViewCards from './pages/view_functions_cards';
 import ViewFullInfo from './pages/view_full_info_page';
 import ListFunctions from './pages/ListFunctions_form';
-
+import DocumentationPage from './pages/DocumentationPage';
+import TutorialPage from './pages/TutorialPage'
+import ManageSubscriptions from './pages/Manage_subscriptions';
 
 
 function App() {
@@ -25,6 +27,9 @@ function App() {
         <Route path='/view-functions-cards' element={<ViewCards />} />
         <Route path='/view-functions-fully' element={<ViewFullInfo />} />
         <Route path='/list-function' element={<ListFunctions/>} />
+        <Route path='/documentation' element={<DocumentationPage/>} />
+        <Route path='/tutorials' element={<TutorialPage/>} />
+        <Route path='/manage-subscriptions' element={<ManageSubscriptions/>} />
       </Routes>
     </BrowserRouter>
     </> 
