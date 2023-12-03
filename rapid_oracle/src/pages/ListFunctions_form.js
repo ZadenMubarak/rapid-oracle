@@ -7,8 +7,11 @@ import { InputTextarea } from 'primereact/inputtextarea';
 import { Button } from 'primereact/button';
 import { Editor } from 'primereact/editor';
 import { Toast } from 'primereact/toast';
+import { Dropdown } from 'primereact/dropdown';
+import { Checkbox } from "primereact/checkbox";
 
 import { market_card } from "../models/market_card_model";
+import { AppStateService } from "../Appstate-sevice/AppState.service";
 
 const ListFunctions = () => {
     const [section, setSection] = useState(0);
@@ -20,6 +23,20 @@ const ListFunctions = () => {
     const [shortDescription, setShortDescription] = useState('');
     const [longDescription, setLongDescription] = useState('');
     const [usage, setUsage] = useState('');
+    const [checked, setChecked] = useState(false);
+    const [isPaid, setIsPaid] = useState(false);
+
+    const service = new AppStateService();
+    let yes = '';
+    let paid = '';
+    const arrayIdIndex = [service.polybaseResponse[0]]
+
+    const [selectedOption, setSelectedOption] = useState(null);
+    const options = [
+        { name: 'Yes', code: 'Y' },
+        { name: 'No', code: 'N' },
+
+    ];
 
     const toast = useRef(null);
 
@@ -45,6 +62,19 @@ const ListFunctions = () => {
             
                 },
             )
+
+            const db_values = {
+                id: `${arrayIdIndex.length + 1}`,
+                title: title,
+                author: author,
+                short_details: shortDescription,
+                long_details: longDescription,
+                usage: usage,
+                functionAddress: functionContractAddress,
+                creatorAddress: creatorAddress,
+            }
+
+            service.createProject(db_values);
         }
     }
 
@@ -97,13 +127,28 @@ const ListFunctions = () => {
 
                         <label  className="block text-900 font-medium mb-2">Function creator contract address</label>
                         <InputText placeholder='Creator Address' className="w-full mb-3" onChange={(e)=> {setCreatoAddress(e.target.value)}}/>
+
+                        <label  className="block text-900 font-medium mb-2">Is the function to be payed for?</label>
+                        <div className="">
+                            <Checkbox inputId="ingredient2" name="pizza" value="Mushroom" onChange={e => setIsPaid(e.checked)} checked={isPaid} />
+                            <label htmlFor="ingredient2" className="ml-2">{isPaid ? paid='yes': paid='no'}</label>
+                        </div>
+
+                        <div className="h-1rem"></div>
+                        <label className="block text-900 font-medium mb-2">is function Audited?</label>
+                        <div className="flex align-items-center">
+                            
+                            <Checkbox inputId="ingredient2" name="pizza" value="Mushroom" onChange={e => setChecked(e.checked)} checked={checked} />
+                            <label htmlFor="ingredient2" className="ml-2">{checked ? yes='yes': yes='no'}</label>
+                            
+                        </div>
                     </div>
                 )}
 
                 { section === 2 && (
                     <div>
                         <label className="block text-900 font-medium mb-2">Usage</label>
-                        <Editor placeholder="Put in a little code snippet to show the usage" value={usage} onTextChange={(e) => setUsage(e.htmlValue)} headerTemplate={header} style={{ height: '320px' }} />
+                        <Editor placeholder="Put in a little code snippet to show the usage" value={usage} onTextChange={(e) => setUsage(e.textValue)} headerTemplate={header} style={{ height: '320px' }} />
                         <Divider/>
 
                         <Button label="Submit" severity="primary" className="w-full" onClick={submissionButtonEventHandling} />
