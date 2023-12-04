@@ -10,9 +10,16 @@ import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import Blockies from 'react-blockies'; 
 
-import { My_functions } from '../models/manage_functions_Model';
+import { AppStateService } from '../Appstate-sevice/AppState.service';
 
 const ManageSubscriptions = () => {
+    const service = new AppStateService();
+    service.getSubScribers(service.walletAddress);
+
+    const subscribers = service.subscribersResponse;
+    const itemsArray = service.polybaseResponse;
+    console.log("from manage: ",  subscribers);
+ 
   return (
     <div>
         <div className="bg-primary-800 text-gray-100 p-3 flex justify-content-between lg:justify-content-center align-items-center flex-wrap " style={{height:"12rem", background:`url(https://media.cryptoglobe.com/2020/08/zeus-capital-chainlink-dont-get-fooled-768x384.jpg)`}}>
@@ -30,22 +37,21 @@ const ManageSubscriptions = () => {
         <div className='flex justify-content-center align-items-center'>
             <Card className='shadow-5' style={{width:'70%'}}>
                 <span className="block text-2xl font-bold mb-1">view your function details and subscriptions </span>
+                <h1>sub: </h1>
                 <div className="card">
                 <TabView>
                     <TabPanel header="Listed">
                         <div className="card">
                         <Accordion>
-                            {My_functions.map((func, index) => (
-                            <AccordionTab key={index} header={func.name}>
+                            <div style={{ height: "200px" }}></div>
+                            {subscribers.map((func, index) => (
+                            <AccordionTab key={index} header={func.FunctionAddress}>
                                 <p className="m-0">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    FUnction details
+  
                                 </p>
                             </AccordionTab>
                             ))}
-                            <div style={{ height: "200px" }}></div>
                         </Accordion>        
                     </div>
                         
